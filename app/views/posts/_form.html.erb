@@ -15,11 +15,15 @@
   </div>
   <div class="post_image">
     <%= form.label :image %>
-    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
-    <%= form.file_field :image %>
+    <div class="image_area">
+      <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+    </div>
+    <div class="image_choice">
+      <%= form.file_field :image %>
+    </div>
     <%= form.hidden_field :image_cache %>
   </div>
   <div class="action">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-default' %>
   </div>
 <% end %>

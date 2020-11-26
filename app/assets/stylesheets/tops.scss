@@ -1,3 +1,62 @@
-// Place all the styles related to the tops controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  text-align: center;
+  background-color: #e0e0e0;
+}
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+header {
+  width: 100%;
+  background-color: #3b5998;
+  height: 54px;
+  margin: 0;
+}
+header ul {
+  margin: 0 auto;
+  padding: 0;
+  text-align: right;
+}
+header ul a {
+  display: inline-block;
+  padding: 15px;
+  color: white;
+}
+header li {
+  display: inline-block;
+  width: auto;
+}
+header li.left {
+  float: left;
+}
+head li.right {
+  display: inline-block;
+}
+head li a:hover {
+  color: #fff;
+}
+header ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container {
+  padding-bottom: 100px;
+}
+footer {
+  width: 100%;
+  background-color:#3b5998;
+  padding: 20px 0 10px 0;
+  color: white;
+  margin: auto;
+  padding-bottom: 10px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+}

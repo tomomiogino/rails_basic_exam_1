@@ -2,7 +2,9 @@
 <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
   <p>本文:<%= @post.content %></p>
-  <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+  <div class="image_area">
+    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+  </div>
   <%= form.hidden_field :image %>
   <%= form.hidden_field :image_cache %>
   <%= form.submit "投稿する" %>
@@ -11,5 +13,5 @@
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image %>
   <%= form.hidden_field :image_cache %>
-  <%= form.submit "戻る", name: "back" %>
+  <%= form.submit "編集画面へ戻る", name: "back" %>
 <% end %>

@@ -13,7 +13,7 @@
     <header>
       <% if logged_in? %>
         <ul>
-          <li class="left"><%= link_to "FbClone", root_path %></li>
+          <li class="left"><%= link_to "FBCloneapp", root_path %></li>
           <li class="right"><%= link_to current_user.name, user_path(current_user.id) %></li>
           <li class="right"><%= link_to "投稿一覧", posts_path %></li>
           <li class="right"><%= link_to '新規投稿', new_post_path %></li>
@@ -21,7 +21,7 @@
         </ul>
       <% else %>
         <ul>
-          <li class="left"><%= link_to "FbClone", root_path %></li>
+          <li class="left"><%= link_to "FBCloneapp", root_path %></li>
           <li class="right"><%= link_to "新規登録", new_user_path %></li>
           <li class="right"><%= link_to "ログイン", new_session_path %></li>
         </ul>
@@ -34,7 +34,7 @@
       <%= yield %>
     </div>
     <footer>
-      <p>Fbclonetest</p>
+      <p>FBCloneapp</p>
       <p>© 2020 T-ogino</p>
     </footer>
   </body>

@@ -1,6 +1,16 @@
-<p>本文：　<%= @post.content %></p>
-<p>Image:  <%= image_tag @post.image.url %></p>
-<div class="link">
+<h3>本文</h3>
+<%= @post.content %></p>
+
+<h3>Image</h3>
+<div class="image_area">
+  <%= image_tag @post.image.url %>
+</div>
+<div class="link　btn-group">
+  <span class="btn btn-default"><%= link_to '編集する', edit_post_path(@post) %></span>
+  <span class="btn btn-default"><%= link_to '削除する', post_path(@post), method: :delete, data: {confirm: '本当に削除していいですか？'} %></span>
+</div>
+
+<!-- <div class="link">
   <span><%= link_to '編集', edit_post_path(@post) %></span>
   <span><%= link_to '戻る', posts_path %></span>
-</div>
+</div> -->
