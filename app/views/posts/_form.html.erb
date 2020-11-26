@@ -1,0 +1,25 @@
+<%= form_with(model: post, local: true, url: choose_new_or_edit) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_expalanation">
+      <h2><%= post.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="post_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="post_image">
+    <%= form.label :image %>
+    <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+  <div class="action">
+    <%= form.submit %>
+  </div>
+<% end %>

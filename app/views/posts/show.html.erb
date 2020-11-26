@@ -1,0 +1,6 @@
+<p>本文：　<%= @post.content %></p>
+<p>Image:  <%= image_tag @post.image.url %></p>
+<div class="link">
+  <span><%= link_to '編集', edit_post_path(@post) %></span>
+  <span><%= link_to '戻る', posts_path %></span>
+</div>
