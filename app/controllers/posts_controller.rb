@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def new
@@ -31,6 +31,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if @post.user == current_user
+      render :edit
+    else
+      redirect_to post_path, notice: "権限がありません"
+    end
   end
 
   def update
@@ -42,8 +47,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_path, notice: "投稿を削除しました！"
+    if @post.user == current_user
+      @post.destroy
+      redirect_to posts_path, notice: "投稿を削除しました！"
+    # else
+    #   redirect_to post_path, notice: "権限がありません"
+    end
+    # @post.destroy
+    # redirect_to posts_path, notice: "投稿を削除しました！"
   end
 
   def confirm
