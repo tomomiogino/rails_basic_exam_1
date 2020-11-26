@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  
   def index
     @posts = Post.all.order(created_at: :desc)
   end
@@ -50,11 +51,7 @@ class PostsController < ApplicationController
     if @post.user == current_user
       @post.destroy
       redirect_to posts_path, notice: "投稿を削除しました！"
-    # else
-    #   redirect_to post_path, notice: "権限がありません"
     end
-    # @post.destroy
-    # redirect_to posts_path, notice: "投稿を削除しました！"
   end
 
   def confirm
