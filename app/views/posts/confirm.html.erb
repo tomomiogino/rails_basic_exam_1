@@ -7,11 +7,11 @@
   </div>
   <%= form.hidden_field :image %>
   <%= form.hidden_field :image_cache %>
-  <%= form.submit "投稿する" %>
+  <%= form.submit "投稿する", class: 'btn btn-default' %>
 <% end %>
 <%= form_with(model: @post, url: new_post_path, local: true, method: "get") do |form| %>
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image %>
   <%= form.hidden_field :image_cache %>
-  <%= form.submit "戻る", name: "back" %>
+  <%= form.submit "戻る", name: "back", class: 'btn btn-default' %>
 <% end %>
